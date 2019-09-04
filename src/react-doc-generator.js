@@ -27,6 +27,7 @@ Handlebars.registerHelper("inc", (value, options) => {
   console.log(Colors.white(`by Marcin Borkowski <marborkowski@gmail.com>`));
   try {
     if (Command.args.length !== 1) {
+      console.log(Command.args)
       console.log(
         `${Colors.red("Please specify <dir> as the first argument!")}`
       );
@@ -39,8 +40,9 @@ Handlebars.registerHelper("inc", (value, options) => {
         ignoreDirectory: Command.ignore,
         outputDir: Command.output
       });
+      console.log(Command.docusaurusSidebar,'sidebar')
       const outputFile = fs.createWriteStream(Command.output);
-      outputFile.write(template(templateData));
+      outputFile.write(template({...templateData, id: Command.docusaurusId, sidebarLabel: Command.docusaurusSidebar, documentTitle: Command.title }));
       cliOutput.forEach((cliRow) => {
           table.push(cliRow)
       })

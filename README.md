@@ -3,6 +3,12 @@
 [![dependency status](https://img.shields.io/david/marborkowski/react-doc-generator.svg?style=flat-square)](https://david-dm.org/marborkowski/react-doc-generator)
 [![build status](https://img.shields.io/travis/marborkowski/react-doc-generator.svg?style=flat-square)](https://travis-ci.org/marborkowski/react-doc-generator)
 
+This is a fork of the orginial repo [repo link](https://github.com/marborkowski/react-doc-generator)
+
+Acknowledgements to @marborkowski for this awesome plugin.
+
+I have added a few features such as flow support and some refactoring.
+
 Generate simple React components documentation in [Markdown](https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet).
 
 ## Installation
@@ -13,7 +19,7 @@ Generate simple React components documentation in [Markdown](https://github.com/
 
 Check every option runnig `react-doc-generator` with `--help` or `-h`:
 
-```
+```bash
 $ react-doc-generator --help
 
 Usage: react-doc-generator <dir> [options]
@@ -40,7 +46,7 @@ Example:
 Example:
 
 In your `package.json` put:
-```
+```json
 {
   // ...
   "scripts": {

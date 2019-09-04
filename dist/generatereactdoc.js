@@ -175,7 +175,7 @@ function _generateReactDocs() {
                 });
                 cliOutput.push([filename, components.length, _colors["default"].green("OK.")]);
               } catch (e) {
-                console.error("In error");
+                console.error("In error", e);
                 cliOutput.push([filename, 0, _colors["default"].red("You have to export at least one valid React Class!")]);
               }
 

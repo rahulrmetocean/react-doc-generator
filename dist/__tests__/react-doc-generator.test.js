@@ -66,7 +66,7 @@ describe("react-doc-generator", function () {
           case 0:
             _context.prev = 0;
             _context.next = 3;
-            return run("node", [binPath, "src/__mocks__", "-o", "./dist/DOCUMENTATION.md"]);
+            return run("node", [binPath, "src/__mocks__", "-o", "./dist/DOCUMENTATION.md", "-d", "someduck", "-s", "someducksidebar"]);
 
           case 3:
             stdout = _context.sent;
@@ -133,7 +133,7 @@ describe("react-doc-generator", function () {
           case 0:
             _context3.prev = 0;
             _context3.next = 3;
-            return run("node", [binPath, "-o", "./dist/DOCUMENTATION.md"]);
+            return run("node", [binPath, "-o", "./dist/DOCUMENTATION.md", "-d", "someduck", "-s", "someducksidebar"]);
 
           case 3:
             stdout = _context3.sent;
@@ -168,7 +168,7 @@ describe("output file", function () {
           case 0:
             _context4.prev = 0;
             _context4.next = 3;
-            return run("node", [binPath, "src/__mocks__", "-o", "./dist/DOCUMENTATION.md", "-t", "MyTitleXYZ"]);
+            return run("node", [binPath, "src/__mocks__", "-o", "./dist/DOCUMENTATION.md"]);
 
           case 3:
             _context4.next = 5;
@@ -192,5 +192,79 @@ describe("output file", function () {
         }
       }
     }, _callee4, null, [[0, 10]]);
+  })));
+  it("Defaults docusaurus id and sidebar when values were not passed",
+  /*#__PURE__*/
+  _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee5() {
+    var result, lines;
+    return regeneratorRuntime.wrap(function _callee5$(_context5) {
+      while (1) {
+        switch (_context5.prev = _context5.next) {
+          case 0:
+            _context5.prev = 0;
+            _context5.next = 3;
+            return run("node", [binPath, "src/__mocks__", "-o", "./dist/DOCUMENTATION.md"]);
+
+          case 3:
+            _context5.next = 5;
+            return loadDoc();
+
+          case 5:
+            result = _context5.sent;
+            lines = result.split("\n");
+            expect(lines).toMatchSnapshot();
+            _context5.next = 13;
+            break;
+
+          case 10:
+            _context5.prev = 10;
+            _context5.t0 = _context5["catch"](0);
+            throw _context5.t0;
+
+          case 13:
+          case "end":
+            return _context5.stop();
+        }
+      }
+    }, _callee5, null, [[0, 10]]);
+  })));
+  it("Populates docusaurus id and sidebar when values were passed",
+  /*#__PURE__*/
+  _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee6() {
+    var result, lines;
+    return regeneratorRuntime.wrap(function _callee6$(_context6) {
+      while (1) {
+        switch (_context6.prev = _context6.next) {
+          case 0:
+            _context6.prev = 0;
+            _context6.next = 3;
+            return run("node", [binPath, "src/__mocks__", "-o", "./dist/DOCUMENTATION.md", "-d", "someduck", "-s", "someducksidebar"]);
+
+          case 3:
+            _context6.next = 5;
+            return loadDoc();
+
+          case 5:
+            result = _context6.sent;
+            lines = result.split("\n");
+            expect(lines).toMatchSnapshot();
+            _context6.next = 13;
+            break;
+
+          case 10:
+            _context6.prev = 10;
+            _context6.t0 = _context6["catch"](0);
+            throw _context6.t0;
+
+          case 13:
+          case "end":
+            return _context6.stop();
+        }
+      }
+    }, _callee6, null, [[0, 10]]);
   })));
 });

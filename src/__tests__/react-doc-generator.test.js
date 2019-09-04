@@ -49,10 +49,14 @@ describe("react-doc-generator", () => {
         binPath,
         "src/__mocks__",
         "-o",
-        "./dist/DOCUMENTATION.md"
+        "./dist/DOCUMENTATION.md",
+        "-d",
+        "someduck",
+        "-s",
+        "someducksidebar",
       ]);
       const output = stdout[0];
-      expect(output).toMatchSnapshot()
+    expect(output).toMatchSnapshot()
     } catch (e) {
       console.error(e);
       throw e;
@@ -67,7 +71,7 @@ describe("react-doc-generator", () => {
         "-o",
         "./dist/DOCUMENTATION.md",
         "-x",
-        "4hs0,kku4"
+        "4hs0,kku4",
       ]);
       const output = stdout[0];
       expect(output).toMatchSnapshot()
@@ -81,7 +85,11 @@ describe("react-doc-generator", () => {
       const stdout = await run("node", [
         binPath,
         "-o",
-        "./dist/DOCUMENTATION.md"
+        "./dist/DOCUMENTATION.md",
+        "-d",
+        "someduck",
+        "-s",
+        "someducksidebar"
       ]);
       const output = stdout[0];
       expect(output).toMatchSnapshot()
@@ -98,8 +106,40 @@ describe("output file", () => {
         "src/__mocks__",
         "-o",
         "./dist/DOCUMENTATION.md",
-        "-t",
-        "MyTitleXYZ"
+      ]);
+      const result = await loadDoc();
+      const lines = result.split("\n");
+      expect(lines).toMatchSnapshot()
+    } catch (e) {
+      throw e;
+    }
+  });
+  it("Defaults docusaurus id and sidebar when values were not passed", async () => {
+    try {
+      await run("node",[
+        binPath,
+        "src/__mocks__",
+        "-o",
+        "./dist/DOCUMENTATION.md",
+      ]);
+      const result = await loadDoc();
+      const lines = result.split("\n");
+      expect(lines).toMatchSnapshot()
+    } catch (e) {
+      throw e;
+    }
+  });
+  it("Populates docusaurus id and sidebar when values were passed", async () => {
+    try {
+      await run("node",[
+        binPath,
+        "src/__mocks__",
+        "-o",
+        "./dist/DOCUMENTATION.md",
+        "-d",
+        "someduck",
+        "-s",
+        "someducksidebar"
       ]);
       const result = await loadDoc();
       const lines = result.split("\n");

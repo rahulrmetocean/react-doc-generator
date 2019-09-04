@@ -7,7 +7,6 @@ export default (function Command () {
       val = val.replace(/[, ]+/g, ',').trim();
       return val.split(',').filter(value => value.length > 0);
   }
-
   Commander
     .version(pkg.version)
     .usage(`<dir> [options]`)
@@ -16,6 +15,8 @@ export default (function Command () {
     .option('-e, --exclude-patterns <items>', 'Filename patterns to exclude. Default: []', list, [])
     .option('-t, --title [value]', 'Document title. Default: \'Components\'', 'Components')
     .option('-o, --output <file>', 'Markdown file to write. Default: \'DOCUMENTATION.MD\'', 'DOCUMENTATION.MD')
+    .option('-d, --docusaurus-id <value>','Id for docusaurus file', "defaultId")
+    .option('-s, --docusaurus-sidebar <value>','Sidebar label', "defaultSidebarLabel")
     .parse(process.argv);
 
 
