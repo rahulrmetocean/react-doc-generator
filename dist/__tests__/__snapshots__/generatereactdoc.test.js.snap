@@ -42,7 +42,7 @@ Example:
               },
               "baz": Object {
                 "defaultValue": Object {
-                  "value": undefined,
+                  "value": null,
                 },
                 "description": "",
                 "required": false,
@@ -95,7 +95,7 @@ Example:
             "title": "General component description.",
           },
         ],
-        "filename": "C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\ExampleComponent.js",
+        "filename": "C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\basic\\\\ExampleComponent.js",
       },
       Object {
         "components": Array [
@@ -108,173 +108,7 @@ Example:
             "props": Object {
               "bar": Object {
                 "defaultValue": Object {
-                  "value": undefined,
-                },
-                "description": "Description of prop \\"bar\\" (a custom validation function).",
-                "flowType": Object {
-                  "name": "signature",
-                  "raw": "() => void",
-                  "signature": Object {
-                    "arguments": Array [],
-                    "return": Object {
-                      "name": "void",
-                    },
-                  },
-                  "type": "function",
-                },
-                "required": true,
-                "type": Object {
-                  "name": "() => void",
-                },
-              },
-              "baz": Object {
-                "defaultValue": Object {
-                  "value": undefined,
-                },
-                "description": "",
-                "flowType": Object {
-                  "elements": Array [
-                    Object {
-                      "name": "number",
-                    },
-                    Object {
-                      "name": "string",
-                    },
-                  ],
-                  "name": "union",
-                  "raw": "number|string",
-                },
-                "required": true,
-                "type": Object {
-                  "name": "number|string",
-                },
-              },
-              "foo": Object {
-                "defaultValue": Object {
-                  "computed": false,
-                  "value": "10000099999",
-                },
-                "description": "",
-                "flowType": Object {
-                  "name": "number",
-                },
-                "required": false,
-                "type": Object {
-                  "name": "number",
-                },
-              },
-              "onExit": Object {
-                "defaultValue": Object {
-                  "computed": false,
-                  "value": "() => {
-    console.debug('onExit');
-}",
-                },
-                "description": "",
-                "flowType": Object {
-                  "name": "signature",
-                  "raw": "() => void",
-                  "signature": Object {
-                    "arguments": Array [],
-                    "return": Object {
-                      "name": "void",
-                    },
-                  },
-                  "type": "function",
-                },
-                "required": false,
-                "type": Object {
-                  "name": "() => void",
-                },
-              },
-            },
-            "title": "Component1",
-          },
-          Object {
-            "description": "Blah blah blah...
-   
-fdfdfsdf
-   
-fdsfsd   
-
-",
-            "displayName": "DUPA",
-            "methods": Array [],
-            "props": Object {
-              "bar": Object {
-                "defaultValue": Object {
-                  "value": undefined,
-                },
-                "description": "Description of prop \\"bar\\" (a custom validation function).",
-                "flowType": Object {
-                  "name": "signature",
-                  "raw": "() => mixed",
-                  "signature": Object {
-                    "arguments": Array [],
-                    "return": Object {
-                      "name": "mixed",
-                    },
-                  },
-                  "type": "function",
-                },
-                "required": true,
-                "type": Object {
-                  "name": "() => mixed",
-                },
-              },
-              "baz": Object {
-                "defaultValue": Object {
-                  "value": undefined,
-                },
-                "description": "",
-                "flowType": Object {
-                  "elements": Array [
-                    Object {
-                      "name": "number",
-                    },
-                    Object {
-                      "name": "string",
-                    },
-                  ],
-                  "name": "union",
-                  "raw": "number | string",
-                },
-                "required": true,
-                "type": Object {
-                  "name": "number | string",
-                },
-              },
-              "foo": Object {
-                "defaultValue": Object {
-                  "value": undefined,
-                },
-                "description": "Description of prop \\"foo\\".",
-                "flowType": Object {
-                  "name": "number",
-                },
-                "required": true,
-                "type": Object {
-                  "name": "number",
-                },
-              },
-            },
-            "title": "DUPA",
-          },
-        ],
-        "filename": "C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\OtherExampleComponent.js",
-      },
-      Object {
-        "components": Array [
-          Object {
-            "description": "null   
-
-",
-            "displayName": "Component1",
-            "methods": Array [],
-            "props": Object {
-              "bar": Object {
-                "defaultValue": Object {
-                  "value": undefined,
+                  "value": null,
                 },
                 "description": "Description of prop \\"bar\\" (a custom validation function).",
                 "required": false,
@@ -287,7 +121,7 @@ fdsfsd
               },
               "baz": Object {
                 "defaultValue": Object {
-                  "value": undefined,
+                  "value": null,
                 },
                 "description": "",
                 "required": false,
@@ -341,7 +175,7 @@ fdsfsd
             "props": Object {
               "bar": Object {
                 "defaultValue": Object {
-                  "value": undefined,
+                  "value": null,
                 },
                 "description": "Description of prop \\"bar\\" (a custom validation function).",
                 "required": false,
@@ -354,7 +188,7 @@ fdsfsd
               },
               "baz": Object {
                 "defaultValue": Object {
-                  "value": undefined,
+                  "value": null,
                 },
                 "description": "",
                 "required": false,
@@ -372,7 +206,7 @@ fdsfsd
               },
               "foo": Object {
                 "defaultValue": Object {
-                  "value": undefined,
+                  "value": null,
                 },
                 "description": "Description of prop \\"foo\\".",
                 "required": false,
@@ -384,24 +218,254 @@ fdsfsd
             "title": "DUPA",
           },
         ],
-        "filename": "C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\inside\\\\OtherExampleComponent.js",
+        "filename": "C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\basic\\\\inside\\\\OtherExampleComponent.js",
+      },
+      Object {
+        "components": Array [
+          Object {
+            "description": "null   
+
+",
+            "displayName": "Component1",
+            "methods": Array [],
+            "props": Object {
+              "bar": Object {
+                "defaultValue": Object {
+                  "value": null,
+                },
+                "description": "Description of prop \\"bar\\" (a custom validation function).",
+                "flowType": Object {
+                  "name": "signature",
+                  "raw": "() => void",
+                  "signature": Object {
+                    "arguments": Array [],
+                    "return": Object {
+                      "name": "void",
+                    },
+                  },
+                  "type": "function",
+                },
+                "required": true,
+                "type": Object {
+                  "name": "() => void",
+                },
+              },
+              "baz": Object {
+                "defaultValue": Object {
+                  "value": null,
+                },
+                "description": "Description of a property with a flow or operation",
+                "flowType": Object {
+                  "elements": Array [
+                    Object {
+                      "name": "number",
+                    },
+                    Object {
+                      "name": "string",
+                    },
+                  ],
+                  "name": "union",
+                  "raw": "number|string",
+                },
+                "required": true,
+                "type": Object {
+                  "name": "number|string",
+                },
+              },
+              "customObjectProp": Object {
+                "defaultValue": Object {
+                  "value": null,
+                },
+                "description": "",
+                "flowType": Object {
+                  "name": "signature",
+                  "raw": "{
+  firstName:string,
+  lastName:string
+}",
+                  "signature": Object {
+                    "properties": Array [
+                      Object {
+                        "key": "firstName",
+                        "value": Object {
+                          "name": "string",
+                          "required": true,
+                        },
+                      },
+                      Object {
+                        "key": "lastName",
+                        "value": Object {
+                          "name": "string",
+                          "required": true,
+                        },
+                      },
+                    ],
+                  },
+                  "type": "object",
+                },
+                "required": true,
+                "type": Object {
+                  "name": "{   firstName:string,   lastName:string }",
+                },
+              },
+              "foo": Object {
+                "defaultValue": Object {
+                  "computed": false,
+                  "value": "10000099999",
+                },
+                "description": "",
+                "flowType": Object {
+                  "name": "number",
+                },
+                "required": false,
+                "type": Object {
+                  "name": "number",
+                },
+              },
+              "onExit": Object {
+                "defaultValue": Object {
+                  "computed": false,
+                  "value": "() => {     console.debug('onExit'); }",
+                },
+                "description": "Handler to invoke a function",
+                "flowType": Object {
+                  "name": "signature",
+                  "raw": "() => void",
+                  "signature": Object {
+                    "arguments": Array [],
+                    "return": Object {
+                      "name": "void",
+                    },
+                  },
+                  "type": "function",
+                },
+                "required": false,
+                "type": Object {
+                  "name": "() => void",
+                },
+              },
+              "someProp": Object {
+                "defaultValue": Object {
+                  "value": null,
+                },
+                "description": "Description for a property which is more than one line",
+                "flowType": Object {
+                  "name": "signature",
+                  "raw": "{
+  [key:string]: string
+}",
+                  "signature": Object {
+                    "properties": Array [
+                      Object {
+                        "key": Object {
+                          "name": "string",
+                        },
+                        "value": Object {
+                          "name": "string",
+                          "required": true,
+                        },
+                      },
+                    ],
+                  },
+                  "type": "object",
+                },
+                "required": true,
+                "type": Object {
+                  "name": "{   [key:string]: string }",
+                },
+              },
+            },
+            "title": "Component1",
+          },
+          Object {
+            "description": "Blah blah blah...
+   
+fdfdfsdf
+   
+fdsfsd   
+
+",
+            "displayName": "DUPA",
+            "methods": Array [],
+            "props": Object {
+              "bar": Object {
+                "defaultValue": Object {
+                  "value": null,
+                },
+                "description": "Description of prop \\"bar\\" (a custom validation function).",
+                "flowType": Object {
+                  "name": "signature",
+                  "raw": "() => mixed",
+                  "signature": Object {
+                    "arguments": Array [],
+                    "return": Object {
+                      "name": "mixed",
+                    },
+                  },
+                  "type": "function",
+                },
+                "required": true,
+                "type": Object {
+                  "name": "() => mixed",
+                },
+              },
+              "baz": Object {
+                "defaultValue": Object {
+                  "value": null,
+                },
+                "description": "",
+                "flowType": Object {
+                  "elements": Array [
+                    Object {
+                      "name": "number",
+                    },
+                    Object {
+                      "name": "string",
+                    },
+                  ],
+                  "name": "union",
+                  "raw": "number | string",
+                },
+                "required": true,
+                "type": Object {
+                  "name": "number | string",
+                },
+              },
+              "foo": Object {
+                "defaultValue": Object {
+                  "value": null,
+                },
+                "description": "Description of prop \\"foo\\".",
+                "flowType": Object {
+                  "name": "number",
+                },
+                "required": true,
+                "type": Object {
+                  "name": "number",
+                },
+              },
+            },
+            "title": "DUPA",
+          },
+        ],
+        "filename": "C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\flow\\\\ComponentWithFlow.js",
       },
     ],
     "version": "1.2.5",
   },
   Array [
     Array [
-      "C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\ExampleComponent.js",
+      "C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\basic\\\\ExampleComponent.js",
       1,
       "[32mOK.[39m",
     ],
     Array [
-      "C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\OtherExampleComponent.js",
+      "C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\basic\\\\inside\\\\OtherExampleComponent.js",
       2,
       "[32mOK.[39m",
     ],
     Array [
-      "C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\inside\\\\OtherExampleComponent.js",
+      "C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\flow\\\\ComponentWithFlow.js",
       2,
       "[32mOK.[39m",
     ],

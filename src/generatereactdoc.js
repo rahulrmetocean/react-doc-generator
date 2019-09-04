@@ -57,7 +57,7 @@ export function processProp(prop) {
       processedDefaultValue = "See code"
     }else{
       if(defaultValue.value){
-        processedDefaultValue = defaultValue.value.replace(/\r?\n|\r/g,' ');
+        processedDefaultValue = typeof defaultValue.value==='string' ? defaultValue.value.replace(/\r?\n|\r/g,' '): defaultValue.value
       }
     }
   const processedDescription = prop.description
