@@ -1,14 +1,25 @@
 // @flow
 import React from 'react';
 
+type ExternalNameType = {
+  firstName:string,
+  lastName:string
+}
 type Component1PropType = {
   foo: number,
   /**
    * Description of prop "bar" (a custom validation function).
    */
   bar: () => void,
+  /** Description of a property with a flow or operation */
   baz: number|string,
-  onExit: () => void
+  /** Description for a property which is more than one line */
+  someProp: {
+    [key:string]: string
+  },
+  /** Handler to invoke a function */
+  onExit: () => void,
+  customObjectProp: ExternalNameType
 }
 /**
  * General component description.

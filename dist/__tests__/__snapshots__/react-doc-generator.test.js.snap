@@ -20,7 +20,7 @@ Array [
 ",
   "
 ",
-  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\ExampleComponent.js**
+  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\basic\\\\ExampleComponent.js**
 ",
   "
 ",
@@ -66,67 +66,7 @@ Array [
 ",
   "-----
 ",
-  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\OtherExampleComponent.js**
-",
-  "
-",
-  "### 1. Component1
-",
-  "
-",
-  "null   ",
-  "",
-  "
-",
-  "
-",
-  "
-",
-  "Property | Type | Required | Default value | Description
-",
-  ":--- | :--- | :--- | :--- | :---
-",
-  "foo|number|no|10000099999|
-",
-  "bar|() &#x3D;&gt; void|yes||Description of prop &quot;bar&quot; (a custom validation function).
-",
-  "baz|number|string|yes||
-",
-  "onExit|() &#x3D;&gt; void|no|() &#x3D;&gt; {
-",
-  "    console.debug(&#x27;onExit&#x27;);
-",
-  "}|
-",
-  "### 2. DUPA
-",
-  "
-",
-  "Blah blah blah...
-   ",
-  "fdfdfsdf
-   ",
-  "fdsfsd   ",
-  "",
-  "
-",
-  "
-",
-  "
-",
-  "Property | Type | Required | Default value | Description
-",
-  ":--- | :--- | :--- | :--- | :---
-",
-  "foo|number|yes||Description of prop &quot;foo&quot;.
-",
-  "bar|() &#x3D;&gt; mixed|yes||Description of prop &quot;bar&quot; (a custom validation function).
-",
-  "baz|number | string|yes||
-",
-  "-----
-",
-  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\inside\\\\OtherExampleComponent.js**
+  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\basic\\\\inside\\\\OtherExampleComponent.js**
 ",
   "
 ",
@@ -210,7 +150,7 @@ Array [
 ",
   "
 ",
-  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\ExampleComponent.js**
+  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\basic\\\\ExampleComponent.js**
 ",
   "
 ",
@@ -256,67 +196,7 @@ Array [
 ",
   "-----
 ",
-  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\OtherExampleComponent.js**
-",
-  "
-",
-  "### 1. Component1
-",
-  "
-",
-  "null   ",
-  "",
-  "
-",
-  "
-",
-  "
-",
-  "Property | Type | Required | Default value | Description
-",
-  ":--- | :--- | :--- | :--- | :---
-",
-  "foo|number|no|10000099999|
-",
-  "bar|() &#x3D;&gt; void|yes||Description of prop &quot;bar&quot; (a custom validation function).
-",
-  "baz|number|string|yes||
-",
-  "onExit|() &#x3D;&gt; void|no|() &#x3D;&gt; {
-",
-  "    console.debug(&#x27;onExit&#x27;);
-",
-  "}|
-",
-  "### 2. DUPA
-",
-  "
-",
-  "Blah blah blah...
-   ",
-  "fdfdfsdf
-   ",
-  "fdsfsd   ",
-  "",
-  "
-",
-  "
-",
-  "
-",
-  "Property | Type | Required | Default value | Description
-",
-  ":--- | :--- | :--- | :--- | :---
-",
-  "foo|number|yes||Description of prop &quot;foo&quot;.
-",
-  "bar|() &#x3D;&gt; mixed|yes||Description of prop &quot;bar&quot; (a custom validation function).
-",
-  "baz|number | string|yes||
-",
-  "-----
-",
-  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\inside\\\\OtherExampleComponent.js**
+  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\basic\\\\inside\\\\OtherExampleComponent.js**
 ",
   "
 ",
@@ -369,6 +249,94 @@ Array [
   "bar|custom|no||Description of prop &quot;bar&quot; (a custom validation function).
 ",
   "baz|union|no||
+",
+  "-----
+",
+  "
+",
+  "
+",
+  "",
+]
+`;
+
+exports[`output file Works well for flow components as well 1`] = `
+Array [
+  "---
+",
+  "id: someduck
+",
+  "title: Components
+",
+  "sidebar_label: someducksidebar
+",
+  "---
+",
+  "
+",
+  "Components
+",
+  "----------
+",
+  "
+",
+  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\flow\\\\ComponentWithFlow.js**
+",
+  "
+",
+  "### 1. Component1
+",
+  "
+",
+  "null   ",
+  "",
+  "
+",
+  "
+",
+  "
+",
+  "Property | Type | Required | Default value | Description
+",
+  ":--- | :--- | :--- | :--- | :---
+",
+  "foo|number|no|10000099999|
+",
+  "bar|() &#x3D;&gt; void|yes||Description of prop &quot;bar&quot; (a custom validation function).
+",
+  "baz|number|string|yes||Description of a property with a flow or operation
+",
+  "someProp|{   [key:string]: string }|yes||Description for a property which is more than one line
+",
+  "onExit|() &#x3D;&gt; void|no|() &#x3D;&gt; {     console.debug(&#x27;onExit&#x27;); }|Handler to invoke a function
+",
+  "customObjectProp|{   firstName:string,   lastName:string }|yes||
+",
+  "### 2. DUPA
+",
+  "
+",
+  "Blah blah blah...
+   ",
+  "fdfdfsdf
+   ",
+  "fdsfsd   ",
+  "",
+  "
+",
+  "
+",
+  "
+",
+  "Property | Type | Required | Default value | Description
+",
+  ":--- | :--- | :--- | :--- | :---
+",
+  "foo|number|yes||Description of prop &quot;foo&quot;.
+",
+  "bar|() &#x3D;&gt; mixed|yes||Description of prop &quot;bar&quot; (a custom validation function).
+",
+  "baz|number | string|yes||
 ",
   "-----
 ",
@@ -382,9 +350,25 @@ Array [
 
 exports[`output file has needed values 1`] = `
 Array [
+  "---
+",
+  "id: defaultId
+",
+  "title: Components
+",
+  "sidebar_label: defaultSidebarLabel
+",
+  "---
+",
   "
 ",
-  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\ExampleComponent.js**
+  "Components
+",
+  "----------
+",
+  "
+",
+  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\basic\\\\ExampleComponent.js**
 ",
   "
 ",
@@ -430,67 +414,7 @@ Array [
 ",
   "-----
 ",
-  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\OtherExampleComponent.js**
-",
-  "
-",
-  "### 1. Component1
-",
-  "
-",
-  "null   ",
-  "",
-  "
-",
-  "
-",
-  "
-",
-  "Property | Type | Required | Default value | Description
-",
-  ":--- | :--- | :--- | :--- | :---
-",
-  "foo|number|no|10000099999|
-",
-  "bar|() &#x3D;&gt; void|yes||Description of prop &quot;bar&quot; (a custom validation function).
-",
-  "baz|number|string|yes||
-",
-  "onExit|() &#x3D;&gt; void|no|() &#x3D;&gt; {
-",
-  "    console.debug(&#x27;onExit&#x27;);
-",
-  "}|
-",
-  "### 2. DUPA
-",
-  "
-",
-  "Blah blah blah...
-   ",
-  "fdfdfsdf
-   ",
-  "fdsfsd   ",
-  "",
-  "
-",
-  "
-",
-  "
-",
-  "Property | Type | Required | Default value | Description
-",
-  ":--- | :--- | :--- | :--- | :---
-",
-  "foo|number|yes||Description of prop &quot;foo&quot;.
-",
-  "bar|() &#x3D;&gt; mixed|yes||Description of prop &quot;bar&quot; (a custom validation function).
-",
-  "baz|number | string|yes||
-",
-  "-----
-",
-  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\inside\\\\OtherExampleComponent.js**
+  "**C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\basic\\\\inside\\\\OtherExampleComponent.js**
 ",
   "
 ",
@@ -548,7 +472,7 @@ Array [
 ",
   "
 ",
-  "<sub>This document was generated by the <a href=\\"https://github.com/marborkowski/react-doc-generator\\" target=\\"_blank\\">**React DOC Generator v1.2.5**</a>.</sub>
+  "
 ",
   "",
 ]
@@ -559,19 +483,22 @@ exports[`react-doc-generator contains help section if no argument is available i
 
 [37mREACT DOC GENERATOR v1.2.5[39m
 [37mby Marcin Borkowski <marborkowski@gmail.com>[39m
+[]
 [31mPlease specify <dir> as the first argument![39m
 
   Usage: react-doc-generator <dir> [options]
 
   Options:
 
-    -h, --help                      output usage information
-    -V, --version                   output the version number
-    -x, --extensions <items>        Include only these file extensions. Default: js,jsx
-    -i, --ignore <items>            Folders to ignore. Default: node_modules,__tests__,__mocks__
-    -e, --exclude-patterns <items>  Filename patterns to exclude. Default: []
-    -t, --title [value]             Document title. Default: 'Components'
-    -o, --output <file>             Markdown file to write. Default: 'DOCUMENTATION.MD'
+    -h, --help                        output usage information
+    -V, --version                     output the version number
+    -x, --extensions <items>          Include only these file extensions. Default: js,jsx
+    -i, --ignore <items>              Folders to ignore. Default: node_modules,__tests__,__mocks__
+    -e, --exclude-patterns <items>    Filename patterns to exclude. Default: []
+    -t, --title [value]               Document title. Default: 'Components'
+    -o, --output <file>               Markdown file to write. Default: 'DOCUMENTATION.MD'
+    -d, --docusaurus-id <value>       Id for docusaurus file
+    -s, --docusaurus-sidebar <value>  Sidebar label
 
 "
 `;
@@ -584,6 +511,7 @@ exports[`react-doc-generator has the proper console output 1`] = `
 C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\ExampleComponent.js,1,[32mOK.[39m,C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\OtherExampleComponent.js,2,[32mOK.[39m,C:\\\\Users\\\\rravindran\\\\metocean\\\\react-doc-generator\\\\src\\\\__mocks__\\\\inside\\\\OtherExampleComponent.js,2,[32mOK.[39m
 
 
+someducksidebar sidebar
 ┌────────────────────────────────────────────────────────────────────────────────────────────────┬────────────┬────────┐
 │ [36mPath[39m                                                                                           │ [36mComponents[39m │ [36mStatus[39m │
 ├────────────────────────────────────────────────────────────────────────────────────────────────┼────────────┼────────┤
@@ -603,6 +531,7 @@ exports[`react-doc-generator return the proper message when given extensions not
 [37mby Marcin Borkowski <marborkowski@gmail.com>[39m
 [1m[33mWarning:[39m[22m [33mCould not find any files matching the file type: \`*.4hs0\` OR \`*.kku4\`[39m
 
+defaultSidebarLabel sidebar
 ┌──────┬────────────┬────────┐
 │ [36mPath[39m │ [36mComponents[39m │ [36mStatus[39m │
 └──────┴────────────┴────────┘

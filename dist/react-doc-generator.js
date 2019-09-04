@@ -69,7 +69,7 @@ regeneratorRuntime.mark(function _callee() {
 
           _command["default"].help();
 
-          _context.next = 23;
+          _context.next = 22;
           break;
 
         case 12:
@@ -87,7 +87,6 @@ regeneratorRuntime.mark(function _callee() {
           _ref3 = _slicedToArray(_ref2, 2);
           templateData = _ref3[0];
           cliOutput = _ref3[1];
-          console.log(_command["default"].docusaurusSidebar, 'sidebar');
           outputFile = _fs["default"].createWriteStream(_command["default"].output);
           outputFile.write(template(_objectSpread({}, templateData, {
             id: _command["default"].docusaurusId,
@@ -99,19 +98,19 @@ regeneratorRuntime.mark(function _callee() {
           });
           console.log(table.toString());
 
-        case 23:
-          _context.next = 28;
+        case 22:
+          _context.next = 27;
           break;
 
-        case 25:
-          _context.prev = 25;
+        case 24:
+          _context.prev = 24;
           _context.t0 = _context["catch"](5);
           console.error("Error occurred", _context.t0);
 
-        case 28:
+        case 27:
         case "end":
           return _context.stop();
       }
     }
-  }, _callee, null, [[5, 25]]);
+  }, _callee, null, [[5, 24]]);
 }))();

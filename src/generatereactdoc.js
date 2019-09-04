@@ -1,4 +1,5 @@
 import path from "path";
+import os from "os";
 import { parse, resolver } from "react-docgen";
 import { promisify } from "util";
 import { readFiles } from "node-dir";
@@ -23,6 +24,11 @@ export const isDefaultValueTypeString = prop => {
 };
 export const isInvalidDefaultValue = value =>
   /[^\w\s.&:\-+*,!@%$]+/gim.test(value);
+const processRawFlowType = (rawType) => {
+  if(!rawType)
+    return rawType  
+  return rawType.replace(/\r?\n|\r/g,' ')
+}  
 export const getTypeOfProp = (prop) => {
   if(!prop){
     return ''
@@ -30,9 +36,13 @@ export const getTypeOfProp = (prop) => {
   if(prop.type){
     return prop.type
   }else if(prop.flowType){
-    const typeName = prop.flowType.raw ? prop.flowType.raw : prop.flowType.name
+    let type = prop.flowType.name
+    if(prop.flowType.raw){
+      type = processRawFlowType(prop.flowType.raw)
+    }
+    
     return {
-      name: typeName
+      name: type
     }
   }
 
@@ -42,10 +52,14 @@ export function processProp(prop) {
   const isString = isDefaultValueTypeString(prop);
   const isInvalidValue = isInvalidDefaultValue(defaultValue.value);
   const processedType = getTypeOfProp(prop)
-  const processedDefaultValue =
-    defaultValue && isInvalidValue && isString === false
-      ? "See code"
-      : defaultValue.value;
+  let processedDefaultValue = null
+    if(defaultValue && isInvalidValue && isString === false){
+      processedDefaultValue = "See code"
+    }else{
+      if(defaultValue.value){
+        processedDefaultValue = defaultValue.value.replace(/\r?\n|\r/g,' ');
+      }
+    }
   const processedDescription = prop.description
     ? prop.description
         .split("\n")
@@ -116,16 +130,18 @@ async function generateReactDocs({
       excludeDir: ignoreDirectory
     },
     (err, content, filename, next) => {
+      console.log(filename,'filename')
       if (err) {
         console.log(err, "error");
         throw err;
       }
       try {
+        
         const components = parseSingleFile(content);
         templateData.files.push({ filename, components });
         cliOutput.push([filename, components.length, Colors.green(`OK.`)]);
       } catch (e) {
-        console.error("In error",e);
+        console.log("In error",e);
         cliOutput.push([
           filename,
           0,

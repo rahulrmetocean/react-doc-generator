@@ -40,7 +40,6 @@ Handlebars.registerHelper("inc", (value, options) => {
         ignoreDirectory: Command.ignore,
         outputDir: Command.output
       });
-      console.log(Command.docusaurusSidebar,'sidebar')
       const outputFile = fs.createWriteStream(Command.output);
       outputFile.write(template({...templateData, id: Command.docusaurusId, sidebarLabel: Command.docusaurusSidebar, documentTitle: Command.title }));
       cliOutput.forEach((cliRow) => {

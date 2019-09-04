@@ -28,9 +28,9 @@ function run(command, args) {
   });
 }
 
-function loadDoc() {
+function loadDoc(file) {
   return new Promise((resolve, reject) => {
-    fs.readFile("./dist/DOCUMENTATION.md", "utf8", function(err, data) {
+    fs.readFile(file, "utf8", function(err, data) {
       if (err) {
         reject(err);
       } else {
@@ -47,7 +47,7 @@ describe("react-doc-generator", () => {
     try {
       const stdout = await run("node", [
         binPath,
-        "src/__mocks__",
+        "src/__mocks__/basic",
         "-o",
         "./dist/DOCUMENTATION.md",
         "-d",
@@ -67,7 +67,7 @@ describe("react-doc-generator", () => {
     try {
       const stdout = await run("node", [
         binPath,
-        "src/__mocks__",
+        "src/__mocks__/basic",
         "-o",
         "./dist/DOCUMENTATION.md",
         "-x",
@@ -103,11 +103,11 @@ describe("output file", () => {
     try {
       await run("node",[
         binPath,
-        "src/__mocks__",
+        "src/__mocks__/basic",
         "-o",
-        "./dist/DOCUMENTATION.md",
+        "./dist/basic.md",
       ]);
-      const result = await loadDoc();
+      const result = await loadDoc( "./dist/basic.md");
       const lines = result.split("\n");
       expect(lines).toMatchSnapshot()
     } catch (e) {
@@ -118,11 +118,11 @@ describe("output file", () => {
     try {
       await run("node",[
         binPath,
-        "src/__mocks__",
+        "src/__mocks__/basic",
         "-o",
-        "./dist/DOCUMENTATION.md",
+        "./dist/defaultsidebar.md",
       ]);
-      const result = await loadDoc();
+      const result = await loadDoc("./dist/defaultsidebar.md");
       const lines = result.split("\n");
       expect(lines).toMatchSnapshot()
     } catch (e) {
@@ -133,15 +133,35 @@ describe("output file", () => {
     try {
       await run("node",[
         binPath,
-        "src/__mocks__",
+        "src/__mocks__/basic",
         "-o",
-        "./dist/DOCUMENTATION.md",
+        "./dist/sidebar.md",
         "-d",
         "someduck",
         "-s",
         "someducksidebar"
       ]);
-      const result = await loadDoc();
+      const result = await loadDoc('./dist/sidebar.md');
+      const lines = result.split("\n");
+      expect(lines).toMatchSnapshot()
+    } catch (e) {
+      throw e;
+    }
+  });
+  it("Works well for flow components as well", async () => {
+    try {
+      const stdout = await run("node",[
+        binPath,
+        "src/__mocks__/flow",
+        "-o",
+        "./dist/flow.md",
+        "-d",
+        "someduck",
+        "-s",
+        "someducksidebar"
+      ]);
+      console.log(stdout[0])
+      const result = await loadDoc("./dist/flow.md");
       const lines = result.split("\n");
       expect(lines).toMatchSnapshot()
     } catch (e) {

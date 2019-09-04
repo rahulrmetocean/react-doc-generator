@@ -8,6 +8,8 @@ exports["default"] = exports.getTypeOfProp = exports.isInvalidDefaultValue = exp
 
 var _path = _interopRequireDefault(require("path"));
 
+var _os = _interopRequireDefault(require("os"));
+
 var _reactDocgen = require("react-docgen");
 
 var _util = require("util");
@@ -60,6 +62,11 @@ var isInvalidDefaultValue = function isInvalidDefaultValue(value) {
 
 exports.isInvalidDefaultValue = isInvalidDefaultValue;
 
+var processRawFlowType = function processRawFlowType(rawType) {
+  if (!rawType) return rawType;
+  return rawType.replace(/\r?\n|\r/g, ' ');
+};
+
 var getTypeOfProp = function getTypeOfProp(prop) {
   if (!prop) {
     return '';
@@ -68,9 +75,14 @@ var getTypeOfProp = function getTypeOfProp(prop) {
   if (prop.type) {
     return prop.type;
   } else if (prop.flowType) {
-    var typeName = prop.flowType.raw ? prop.flowType.raw : prop.flowType.name;
+    var type = prop.flowType.name;
+
+    if (prop.flowType.raw) {
+      type = processRawFlowType(prop.flowType.raw);
+    }
+
     return {
-      name: typeName
+      name: type
     };
   }
 };
@@ -83,7 +95,16 @@ function processProp(prop) {
   var isString = isDefaultValueTypeString(prop);
   var isInvalidValue = isInvalidDefaultValue(defaultValue.value);
   var processedType = getTypeOfProp(prop);
-  var processedDefaultValue = defaultValue && isInvalidValue && isString === false ? "See code" : defaultValue.value;
+  var processedDefaultValue = null;
+
+  if (defaultValue && isInvalidValue && isString === false) {
+    processedDefaultValue = "See code";
+  } else {
+    if (defaultValue.value) {
+      processedDefaultValue = defaultValue.value.replace(/\r?\n|\r/g, ' ');
+    }
+  }
+
   var processedDescription = prop.description ? prop.description.split("\n").map(function (text) {
     return text.replace(/(^\s+|\s+$)/, "");
   }).map(function (hasValidValue) {
@@ -162,6 +183,8 @@ function _generateReactDocs() {
               exclude: excludePatterns,
               excludeDir: ignoreDirectory
             }, function (err, content, filename, next) {
+              console.log(filename, 'filename');
+
               if (err) {
                 console.log(err, "error");
                 throw err;
@@ -175,7 +198,7 @@ function _generateReactDocs() {
                 });
                 cliOutput.push([filename, components.length, _colors["default"].green("OK.")]);
               } catch (e) {
-                console.error("In error", e);
+                console.log("In error", e);
                 cliOutput.push([filename, 0, _colors["default"].red("You have to export at least one valid React Class!")]);
               }
 

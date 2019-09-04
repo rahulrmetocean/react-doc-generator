@@ -39,9 +39,9 @@ function run(command, args) {
   });
 }
 
-function loadDoc() {
+function loadDoc(file) {
   return new Promise(function (resolve, reject) {
-    fs.readFile("./dist/DOCUMENTATION.md", "utf8", function (err, data) {
+    fs.readFile(file, "utf8", function (err, data) {
       if (err) {
         reject(err);
       } else {
@@ -66,7 +66,7 @@ describe("react-doc-generator", function () {
           case 0:
             _context.prev = 0;
             _context.next = 3;
-            return run("node", [binPath, "src/__mocks__", "-o", "./dist/DOCUMENTATION.md", "-d", "someduck", "-s", "someducksidebar"]);
+            return run("node", [binPath, "src/__mocks__/basic", "-o", "./dist/DOCUMENTATION.md", "-d", "someduck", "-s", "someducksidebar"]);
 
           case 3:
             stdout = _context.sent;
@@ -100,7 +100,7 @@ describe("react-doc-generator", function () {
           case 0:
             _context2.prev = 0;
             _context2.next = 3;
-            return run("node", [binPath, "src/__mocks__", "-o", "./dist/DOCUMENTATION.md", "-x", "4hs0,kku4"]);
+            return run("node", [binPath, "src/__mocks__/basic", "-o", "./dist/DOCUMENTATION.md", "-x", "4hs0,kku4"]);
 
           case 3:
             stdout = _context2.sent;
@@ -168,11 +168,11 @@ describe("output file", function () {
           case 0:
             _context4.prev = 0;
             _context4.next = 3;
-            return run("node", [binPath, "src/__mocks__", "-o", "./dist/DOCUMENTATION.md"]);
+            return run("node", [binPath, "src/__mocks__/basic", "-o", "./dist/basic.md"]);
 
           case 3:
             _context4.next = 5;
-            return loadDoc();
+            return loadDoc("./dist/basic.md");
 
           case 5:
             result = _context4.sent;
@@ -205,11 +205,11 @@ describe("output file", function () {
           case 0:
             _context5.prev = 0;
             _context5.next = 3;
-            return run("node", [binPath, "src/__mocks__", "-o", "./dist/DOCUMENTATION.md"]);
+            return run("node", [binPath, "src/__mocks__/basic", "-o", "./dist/defaultsidebar.md"]);
 
           case 3:
             _context5.next = 5;
-            return loadDoc();
+            return loadDoc("./dist/defaultsidebar.md");
 
           case 5:
             result = _context5.sent;
@@ -242,11 +242,11 @@ describe("output file", function () {
           case 0:
             _context6.prev = 0;
             _context6.next = 3;
-            return run("node", [binPath, "src/__mocks__", "-o", "./dist/DOCUMENTATION.md", "-d", "someduck", "-s", "someducksidebar"]);
+            return run("node", [binPath, "src/__mocks__/basic", "-o", "./dist/sidebar.md", "-d", "someduck", "-s", "someducksidebar"]);
 
           case 3:
             _context6.next = 5;
-            return loadDoc();
+            return loadDoc('./dist/sidebar.md');
 
           case 5:
             result = _context6.sent;
@@ -266,5 +266,44 @@ describe("output file", function () {
         }
       }
     }, _callee6, null, [[0, 10]]);
+  })));
+  it("Works well for flow components as well",
+  /*#__PURE__*/
+  _asyncToGenerator(
+  /*#__PURE__*/
+  regeneratorRuntime.mark(function _callee7() {
+    var stdout, result, lines;
+    return regeneratorRuntime.wrap(function _callee7$(_context7) {
+      while (1) {
+        switch (_context7.prev = _context7.next) {
+          case 0:
+            _context7.prev = 0;
+            _context7.next = 3;
+            return run("node", [binPath, "src/__mocks__/flow", "-o", "./dist/flow.md", "-d", "someduck", "-s", "someducksidebar"]);
+
+          case 3:
+            stdout = _context7.sent;
+            console.log(stdout[0]);
+            _context7.next = 7;
+            return loadDoc("./dist/flow.md");
+
+          case 7:
+            result = _context7.sent;
+            lines = result.split("\n");
+            expect(lines).toMatchSnapshot();
+            _context7.next = 15;
+            break;
+
+          case 12:
+            _context7.prev = 12;
+            _context7.t0 = _context7["catch"](0);
+            throw _context7.t0;
+
+          case 15:
+          case "end":
+            return _context7.stop();
+        }
+      }
+    }, _callee7, null, [[0, 12]]);
   })));
 });
